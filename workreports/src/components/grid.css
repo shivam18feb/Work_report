@@ -1,0 +1,55 @@
+Grid.css
+
+  
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr); /* 30 columns */
+    grid-template-rows: repeat(5, 1fr); /* 5 rows */
+    gap: 1px; /* Adjust gap between cells as needed */
+    border: 1px solid #000; /* Add border for visual separation */
+  }
+  
+  .grid-item {
+    position: relative; /* Positioning for popup */
+    border: 1px solid #ccc; /* Add border for each cell */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: center; /* Center align text within cells */
+    background-color: #f0f0f0; /* Default background color for cells */
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+  }
+  
+  /* Define different fill colors for alternate rows */
+  .grid-item:nth-child(odd) {
+    background-color: #e0e0e0; /* Lighter fill color for odd rows */
+  }
+  
+  .grid-item:nth-child(6n + 1) {
+    background-color: #d0d0d0; /* Darker fill color for first cell in each row */
+  }
+  
+  /* Popup message */
+  .popup {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+     /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  }
+  
+  .grid-item:hover .popup {
+    visibility: visible;
+  }
+  
+  /* Color change on hover */
+  .grid-item:hover {
+    background-color: #b4f595; /* Change background color on hover */
+  }
+  
